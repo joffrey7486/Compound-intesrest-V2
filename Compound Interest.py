@@ -5,7 +5,8 @@ def compoundInterest(capital, apy, paymentDuration, years):
     while eachPayment < totalPayment:
         capital += (capital * apy) / paymentDuration
         eachPayment += 1
-    print(capital)
+    print("Voici votre capital au bout de {} ans: {}".format(years, capital))
+
     return capital
 
 
