@@ -1,13 +1,18 @@
 # Capital => initial number, apy => 8% => 0.08, paymentDuration => every day 365 every week 52 every months 12, year => total number years invest
 def compoundInterest(capital, apy, paymentDuration, years):
-    totalPayment = paymentDuration * years
-    eachPayment = 0
-    while eachPayment < totalPayment:
-        capital += (capital * apy) / paymentDuration
-        eachPayment += 1
+    totalDays = years * 365
+    days = 1
+    i = 0
+    while days < totalDays:
+       if days % paymentDuration == 0:
+            interest = (capital * apy) / (365 / paymentDuration)
+            capital += interest
+            print("Hello {}".format(i))
+       days += 1
     print("Voici votre capital au bout de {} ans: {}".format(years, capital))
-
     return capital
+
+
 
 
 # Demander à l'utilisateur d'entrer les valeurs nécessaires
